@@ -57,6 +57,13 @@ public class BowlingGameTest {
         assertEquals(result, expected);
     }
 
-
+    @Test
+    public void should_add_next_one_number_when_has_spare_tenth_throw() {
+        int[] noStrikeAndSpareNumber = {3,0,4,5,3,2,4,2,4,2,3,4,4,1,2,5,3,4,1,9,6};
+        bowlingGame.addThrow(noStrikeAndSpareNumber);
+        int result = bowlingGame.totalScore();
+        int expected = 71;
+        assertEquals(result, expected);
+    }
 
 }
