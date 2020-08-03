@@ -66,4 +66,14 @@ public class BowlingGameTest {
         assertEquals(result, expected);
     }
 
+    @Test
+    public void should_get_full_score_when_given_all_ten() {
+        int[] noStrikeAndSpareNumber = {10,10,10,10,10,10,10,10,10,10,10,10};
+        bowlingGame.addThrow(noStrikeAndSpareNumber);
+        int result = bowlingGame.totalScore();
+        int expected = 300;
+        assertEquals(result, expected);
+    }
+
+
 }
