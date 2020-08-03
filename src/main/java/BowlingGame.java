@@ -25,12 +25,4 @@ public class BowlingGame {
     public int totalScore(){
         return  score.scoreForRound(ROUNDS);
     }
-
-    public static void main(String[] args) {
-        int[] pins = {10,9,0,5,1,1,4,1,4,1,1,1,1,1,1,2};
-        BowlingGame g = new BowlingGame();
-        g.addThrow(pins);
-        System.out.println("得分是："+g.totalScore());
-
-    }
 }

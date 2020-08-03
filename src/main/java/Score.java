@@ -1,6 +1,7 @@
 public class Score {
-    private int ballCount;//投掷次数
-    private int[] throwPinsNumber= new int[22];//10轮所投的个数
+    private final static int FULL_SCORE = 10;
+    private int ballCount;
+    private int[] throwPinsNumber= new int[22];
     private int currentThrow =0;
 
     public void addThrow(int pinsNumber){
@@ -12,10 +13,10 @@ public class Score {
         int scoreForRound = 0;
         for (int i =0;i<round;i++){
             if (isStrike()){
-                scoreForRound +=10+nextTwoPinsNumber();
+                scoreForRound +=FULL_SCORE+nextTwoPinsNumber();
                 ballCount ++;
             }else if (isSpare()){
-                scoreForRound += 10 +nextPinsNumber();
+                scoreForRound += FULL_SCORE +nextPinsNumber();
                 ballCount += 2;
             }else {
                 scoreForRound += thisRoundTwo();
@@ -26,11 +27,11 @@ public class Score {
     }
 
     private boolean isStrike(){
-        return throwPinsNumber[ballCount]==10;
+        return throwPinsNumber[ballCount]==FULL_SCORE;
     }
 
     private boolean isSpare(){
-        return (throwPinsNumber[ballCount]+throwPinsNumber[ballCount+1])==10;
+        return (throwPinsNumber[ballCount]+throwPinsNumber[ballCount+1])==FULL_SCORE;
     }
 
     private int nextTwoPinsNumber(){

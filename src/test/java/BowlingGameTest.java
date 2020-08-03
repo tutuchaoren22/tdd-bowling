@@ -12,7 +12,7 @@ public class BowlingGameTest {
     }
 
     @Test
-    public void should_return_zero_when_given_zero() {
+    public void should_return_zero_when_given_all_zero() {
         int[] allZeroNumber = new int[20];
         bowlingGame.addThrow(allZeroNumber);
         int result = bowlingGame.totalScore();
@@ -35,6 +35,15 @@ public class BowlingGameTest {
         bowlingGame.addThrow(noStrikeAndSpareNumber);
         int result = bowlingGame.totalScore();
         int expected = 65;
+        assertEquals(result, expected);
+    }
+
+    @Test
+    public void should_add_next_one_number_when_has_spare_before_nine() {
+        int[] noStrikeAndSpareNumber = {1,0,5,5,3,2,1,2,4,2,3,4,4,6,2,5,3,4,2,3};
+        bowlingGame.addThrow(noStrikeAndSpareNumber);
+        int result = bowlingGame.totalScore();
+        int expected = 66;
         assertEquals(result, expected);
     }
 
