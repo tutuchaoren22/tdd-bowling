@@ -17,7 +17,7 @@ public class BowlingGame {
 
     private void adjustCurrentRound(int pinsNumber) {
         if (!isfirstThrowInRound || (pinsNumber == FULL_SCORE)) {
-            currentRound = Math.min(FULL_SCORE, currentRound + 1);
+            currentRound = Math.min(ROUNDS, currentRound + 1);
         } else {
             isfirstThrowInRound = false;
         }
@@ -26,4 +26,5 @@ public class BowlingGame {
     public int totalScore() {
         return score.scoreForRound(ROUNDS);
     }
+
 }

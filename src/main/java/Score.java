@@ -1,7 +1,7 @@
 public class Score {
     private final static int FULL_SCORE = 10;
     private int ballCount;
-    private int[] throwPinsNumber = new int[22];
+    private int[] throwPinsNumber = new int[21];
     private int currentThrow = 0;
 
     public void addThrow(int pinsNumber) {
